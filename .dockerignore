@@ -1,0 +1,23 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.venv
+venv
+
+# Output and data
+tracking_output
+output
+videos
+*.mkv
+*.m4v
+*.mp4
+
+# System files
+.DS_Store
+Thumbs.db

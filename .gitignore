@@ -9,3 +9,12 @@
 !.gitignore
 !README.md
 !LICENSE
+!Dockerfile
+!docker-compose.yml
+!.dockerignore
+!run_docker.sh
+
+# Data directories
+videos/
+output/
+tracking_output/

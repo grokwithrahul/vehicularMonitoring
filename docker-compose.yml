@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  vehicle-tracker:
+    build: .
+    volumes:
+      - ./videos:/app/videos:ro
+      - ./output:/app/output
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    command: ["python", "src/object_tracker.py", "/app/videos/input.mp4"]
