@@ -1,0 +1,6 @@
+ultralytics
+opencv-python
+tqdm
+openai
+torch
+numpy

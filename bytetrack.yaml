@@ -1,0 +1,57 @@
+# Ultralytics YOGA 🚀, AGPL-3.0 license
+# ByteTrack tracker settings
+
+# ByteTrack: A Simple, Fast and Strong Multi-Object Tracker
+#
+# This configuration is for the ByteTrack algorithm, which is used for tracking objects
+# detected by YOLO. ByteTrack excels at handling occlusions by keeping track of
+# low-confidence detections and using them to re-identify objects that have
+# disappeared and reappeared.
+
+# Tracker type: Specifies that we are using the ByteTrack algorithm.
+# Other options might include 'botsort'.
+tracker_type: bytetrack
+
+# High confidence threshold for track initiation.
+# Detections with a confidence score above this value are considered high-confidence
+# and are used to create new tracks.
+track_high_thresh: 0.5
+
+# Low confidence threshold for associating with existing tracks.
+# Detections below 'track_high_thresh' but above this value are kept in a separate
+# pool and used to re-identify lost tracks during the second matching stage.
+# This is key to ByteTrack's robustness against occlusion.
+track_low_thresh: 0.1
+
+# New track threshold.
+# A new track is only created if a high-confidence detection cannot be matched to
+# any existing track and its score is above this threshold. This helps prevent
+# creating new tracks for duplicates of already-tracked objects.
+new_track_thresh: 0.6
+
+# Frame buffer for tracks.
+# This is the number of frames a track is kept alive after it is no longer detected.
+# If the object reappears within this buffer window, it will be re-identified.
+# If not, the track is deleted. A value of 30 at 30 FPS means the tracker will
+# remember a lost object for 1 second.
+track_buffer: 30
+
+# Matching threshold for the tracker.
+# This is the IoU (Intersection over Union) threshold used to associate detections
+# with existing track predictions. A higher value requires a closer match.
+match_thresh: 0.8
+
+# Fuse score into tracking cost.
+# This is the missing parameter. When enabled, it incorporates the detection
+# confidence score into the matching cost, which can improve tracking accuracy.
+fuse_score: True
+
+# --- Gating for motion ---
+# Aspect ratio and area filtering can be enabled to filter out irrelevant detections
+aspect_ratio_thresh: 1.6
+min_box_area: 10
+
+# --- Kalman Filter parameters ---
+# These are advanced parameters for the motion model. Default values are usually fine.
+# std_weight_position: 0.0125      # Standard deviation of the position in the state vector
+# std_weight_velocity: 0.1         # Standard deviation of the velocity in the state vector 

@@ -1,0 +1,39 @@
+*
+
+!object_tracker.py
+!bytetrack.yaml
+!requirements.txt
+!yolo11m.pt
+!license_plate_detector.pt
+!.gitignore
+!README.md
+!LICENSE
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+
+# IDE files
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Large video files (these should be downloaded separately)
+*.mkv
+*.m4v
+*.mp4
+
+# Model files (exclude most, but keep essential ones)
+*.pt
+!license_plate_detector.pt
+!yolo11m.pt
+
+# Output directories (generated during runtime)
+tracking_output/ 
